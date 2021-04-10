@@ -20,7 +20,7 @@ const gameBoard = (() => {
   let countMoves = 0;
   const renderBoard = () => {
     cell.forEach(item => {
-      item.textContent = board[item.dataset.value - 1];
+      item.textContent = board[item.dataset.value];
     });
     renderDisplayStatus();
   };
@@ -49,13 +49,9 @@ const gameBoard = (() => {
   };
 
   const handleClickCell = e => {
-    console.log("Moves Count" + countMoves);
-    if (board[e.currentTarget.dataset.value - 1] !== "" || winner !== null)
-      return;
-    board[e.currentTarget.dataset.value - 1] = currentPlayer;
-    playerMoves[currentPlayer][
-      e.currentTarget.dataset.value - 1
-    ] = currentPlayer;
+    if (board[e.currentTarget.dataset.value] !== "" || winner !== null) return;
+    board[e.currentTarget.dataset.value] = currentPlayer;
+    playerMoves[currentPlayer][e.currentTarget.dataset.value] = currentPlayer;
     winner = checkWinner(playerMoves[currentPlayer]);
     if (winner || countMoves === 8) {
       declareWinner();
