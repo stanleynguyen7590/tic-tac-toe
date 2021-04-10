@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.board__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  font-size: 32px;
+  width: 9em;
+  height: 9em;
+  margin: 0 auto;
+}
+.cell {
+  border: 1px solid #000;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell:hover {
+  background-color: #ccc;
+}
+
+.restart__btn {
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
+}
+
+.game__result {
+  display: flex;
+  justify-content: center;
+}
+
+.status-display {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
